@@ -7,7 +7,8 @@ the PCB is wired for the common anode configuration)
 
 CHECKLIST:
 	[ ] Real time clock
-	[ ] Caps
+	[ ] Caps on attiny
+	[X] Caps on TM1640
 	[X] Pushbuttons for setting time:
 	    (ordered from ebay)
 	      - "set/select": press to initiate setting mode, and accept current
