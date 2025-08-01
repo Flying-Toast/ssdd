@@ -2568,6 +2568,58 @@
 			)
 		)
 	)
+	(sheet
+		(at 119.38 36.83)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c92745bd-27fd-4104-92b5-8f961dfa3137")
+		(property "Sheetname" "Module1"
+			(at 119.38 36.1184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 119.38 42.4946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 119.38 39.37 180)
+			(uuid "a9488a8f-9021-46ea-8a75-c121fea8a988")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
