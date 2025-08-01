@@ -1421,6 +1421,36 @@
 		)
 		(uuid "fe211efe-7593-4570-8dc9-743a3000eae2")
 	)
+	(label "M1CLK"
+		(at 115.57 54.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "04b786fa-324d-43f3-88cc-8c12b3354fad")
+	)
+	(label "M3CLK"
+		(at 115.57 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "07f3e6fb-498f-4b45-8dc9-9d04b36c322e")
+	)
+	(label "M2CLK"
+		(at 226.06 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0a9bc942-ee43-4a3a-b5ac-0d4a8d76ad09")
+	)
 	(label "~{INC_BTN}"
 		(at 134.62 80.01 0)
 		(effects
@@ -1451,6 +1481,46 @@
 		)
 		(uuid "41612323-d29f-4401-9c08-4c2ec7152bf5")
 	)
+	(label "M4CLK"
+		(at 115.57 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "45a53e27-e987-4569-8e33-857caaf585f1")
+	)
+	(label "M3CLK"
+		(at 226.06 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "46436edf-6bbc-4a63-9ea3-1a7dd7b7ec21")
+	)
+	(label "M7CLK"
+		(at 115.57 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c81ddb0-8813-408d-8771-afa45ac481b4")
+	)
+	(label "M8CLK"
+		(at 115.57 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a7e7ef7-3177-4afc-96af-bfcf8724a254")
+	)
 	(label "~{SET_BTN}"
 		(at 133.35 76.2 0)
 		(effects
@@ -1460,6 +1530,56 @@
 			(justify left bottom)
 		)
 		(uuid "670d9c09-1100-4933-8929-804171e54e9c")
+	)
+	(label "M5CLK"
+		(at 226.06 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "78cdb59a-12a7-4afa-8428-a1f0b690d8eb")
+	)
+	(label "M6CLK"
+		(at 115.57 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7a632dc1-cb79-4c85-a102-8168b7cc59c3")
+	)
+	(label "M9CLK"
+		(at 115.57 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "84dafe38-f1db-411d-a4f2-5cde88f3fa69")
+	)
+	(label "M2CLK"
+		(at 115.57 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "901227a8-d33c-41bb-af5f-e77486e32208")
+	)
+	(label "M1CLK"
+		(at 226.06 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "993ad93b-1a7a-4c06-9195-24a278730b32")
 	)
 	(label "~{DEC_BTN}"
 		(at 87.63 139.7 180)
@@ -1471,6 +1591,26 @@
 		)
 		(uuid "a790a06c-b7da-40ff-bfda-44a8d0f3b269")
 	)
+	(label "M7CLK"
+		(at 226.06 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a97d11ab-35bb-4f9f-92e3-7241bf8b7ff7")
+	)
+	(label "M9CLK"
+		(at 226.06 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ad2284e7-1ec3-4469-bacb-c29170b7b3f1")
+	)
 	(label "~{SET_BTN}"
 		(at 87.63 119.38 180)
 		(effects
@@ -1480,6 +1620,46 @@
 			(justify right bottom)
 		)
 		(uuid "aea12ed1-722f-4427-9871-d04416ea9978")
+	)
+	(label "M5CLK"
+		(at 115.57 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b7f4ff87-6de2-4a03-8cb6-df097da61710")
+	)
+	(label "M6CLK"
+		(at 226.06 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b820f71c-8b57-4212-abaa-31751e2e7922")
+	)
+	(label "M8CLK"
+		(at 226.06 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f49c8e00-2b6d-47cd-9e2a-8dd0cf4f3ade")
+	)
+	(label "M4CLK"
+		(at 226.06 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f79cf222-63ba-43bf-9461-b31cb7f3e756")
 	)
 	(global_label "1640_DIN"
 		(shape input)
@@ -2737,7 +2917,371 @@
 		)
 	)
 	(sheet
-		(at 173.99 52.07)
+		(at 226.06 119.38)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "2999f972-2a97-404c-8e8a-f1944f7da9fa")
+		(property "Sheetname" "Module8"
+			(at 226.06 118.6684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 125.0446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 121.92 180)
+			(uuid "83f66da6-e98d-4b45-a441-b19e3b3c0bf0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 109.22)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "528ad272-0ccd-4592-bf87-7b929987564e")
+		(property "Sheetname" "Module7"
+			(at 226.06 108.5084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 114.8846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 111.76 180)
+			(uuid "5ece4d72-6488-49d8-b2fc-0514c3b2817b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 129.54)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "67888a8a-5a99-4148-a7fe-b94d8037f0ce")
+		(property "Sheetname" "Module9"
+			(at 226.06 128.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 132.08 180)
+			(uuid "75ab76e4-5961-483b-a746-fa4d5de4ccb7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 99.06)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8028cfdb-12ff-4440-aacc-65120448082b")
+		(property "Sheetname" "Module6"
+			(at 226.06 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 104.7246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 101.6 180)
+			(uuid "0159535a-6e03-4a31-8a2a-10b89b06402c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 68.58)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "9f234ac0-edf2-4a35-84a2-e161cf8af174")
+		(property "Sheetname" "Module3"
+			(at 226.06 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 74.2446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 71.12 180)
+			(uuid "d16af5ba-def8-4a6d-8d6b-94af8ea1abfe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 88.9)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b313231a-6784-4797-92a7-75ee8640b712")
+		(property "Sheetname" "Module5"
+			(at 226.06 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 94.5646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 91.44 180)
+			(uuid "07498fe2-d1df-4256-94dd-86d5ad68ed7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 58.42)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c204a1f2-0e4b-4d6c-acfd-a7f0c358d49c")
+		(property "Sheetname" "Module2"
+			(at 226.06 57.7084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 64.0846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 60.96 180)
+			(uuid "e94d5034-6251-471a-8b40-f5178d9deadc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 48.26)
 		(size 12.7 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2753,7 +3297,7 @@
 		)
 		(uuid "c92745bd-27fd-4104-92b5-8f961dfa3137")
 		(property "Sheetname" "Module1"
-			(at 173.99 51.3584 0)
+			(at 226.06 47.5484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2762,7 +3306,7 @@
 			)
 		)
 		(property "Sheetfile" "module.kicad_sch"
-			(at 173.99 57.7346 0)
+			(at 226.06 53.9246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2771,7 +3315,7 @@
 			)
 		)
 		(pin "SCLK" input
-			(at 173.99 54.61 180)
+			(at 226.06 50.8 180)
 			(uuid "a9488a8f-9021-46ea-8a75-c121fea8a988")
 			(effects
 				(font
@@ -2784,6 +3328,58 @@
 			(project "ssdd"
 				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 226.06 78.74)
+		(size 12.7 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fd83976f-fb21-44bf-9e12-4fb0dd274971")
+		(property "Sheetname" "Module4"
+			(at 226.06 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "module.kicad_sch"
+			(at 226.06 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCLK" input
+			(at 226.06 81.28 180)
+			(uuid "ecd7b51e-737e-4eea-b5c0-97c677960342")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ssdd"
+				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
+					(page "5")
 				)
 			)
 		)
