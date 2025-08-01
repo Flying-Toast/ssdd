@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ssdd")(type "KiCad")(uri "${KIPRJMOD}/ssdd.pretty")(options "")(descr ""))
+)

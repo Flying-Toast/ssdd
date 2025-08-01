@@ -1,0 +1,48 @@
+SSDD = Seven Segment Display Display
+
+TM1640 ($0.13/ea from JLCPCB assembly warehouse)
+
+144pcs common anode 7 segment displays (the TM1640 supports common cathode too but
+the PCB is wired for the common anode configuration)
+
+CHECKLIST:
+	[ ] Real time clock
+	[ ] Caps
+	[X] Pushbuttons for setting time:
+	    (ordered from ebay)
+	      - "set/select": press to initiate setting mode, and accept current
+	        parameter in setting mode.
+	      - "next": press to increment current parameter
+	      - "previous": press to decrement current parameter
+	    If not enough GPIOs, can dual-purpose some GPIOs that go to TM1640
+	    DIN pins (just don't clock them while the GPIOs are in input mode).
+	[ ] Print out actual size KiCad PCB and make sure components fit. Measure
+	    board width/height to make sure printed size is correct.
+	      - pushbutton footprints
+	      - 7 segment display footprints
+	[ ] Check 7 segment display width/height tolerance and adjust F.Courtyard
+	    outline accordingly.
+	    The silkscreen is currently the exact width/height according to the
+	    datasheet (the outer edges of the silkscreen rect are the exact boundry
+	    of the part). The F.Courtyard rect is exactly on the exact datasheet
+	    width/height border, but that needs updating once the tolerances are
+	    measured on the physical parts.
+	[ ] Power connector
+	[X] Add breakouts to programming pins
+	[ ] Make sure footprints are right (TM1640 comes in several: SSOP, SOP, SOIC)
+	[ ] Double check 7 segment display footprint, measure with calipers. The
+	    current one is just random from the internet, could be wrong.
+	[ ] Validate switch footprint
+	[ ] Also double check 7 segment display pin numbering with multimeter/light up
+	    each individual segment
+	[ ] Make sure using common anode TM1640 setup
+	[ ] Make sure chips go on opposite side of board from segments
+	[ ] Some datasheets seem to mention different addresses (upper nibble
+	    being 0xc instead of 0x0), try both if 0 doesn't work (no hardware
+	    changes needed)
+	[ ] Attiny861-20su has builtin pullup resistors for buttons
+	[ ] Debounce buttons in software
+	[ ] Try putting black film (window tint? privacy tint?) over front to see
+	    if it masks the gaps and inactive segments. (What's something less
+	    opaque than window tint but still a tiny bit opaque?)
+	[ ] Mounting holes?
