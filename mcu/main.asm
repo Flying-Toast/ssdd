@@ -1,0 +1,1 @@
+.device ATtiny861A
