@@ -3835,7 +3835,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "ssdd:C2927028"
 			(at 40.64 163.83 0)
 			(effects
 				(font
