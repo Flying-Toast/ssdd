@@ -291,130 +291,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "MCU_Microchip_ATtiny:ATtiny861-20S"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1238,12 +1114,6 @@
 		)
 	)
 	(junction
-		(at 118.11 95.25)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f462b16-c784-458b-9bc2-ba84d1163257")
-	)
-	(junction
 		(at 128.27 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1263,16 +1133,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 125.73) (xy 137.16 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1bea00ab-b76d-490e-97c6-62ac8b8dbe11")
-	)
-	(wire
-		(pts
 			(xy 133.35 77.47) (xy 130.81 77.47)
 		)
 		(stroke
@@ -1283,16 +1143,6 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 101.6) (xy 118.11 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53a24dea-6b4a-471f-a10a-5877798a0bc9")
-	)
-	(wire
-		(pts
 			(xy 129.54 80.01) (xy 134.62 80.01)
 		)
 		(stroke
@@ -1300,16 +1150,6 @@
 			(type default)
 		)
 		(uuid "755d11f8-e3dd-4c17-9142-ea2dacf87fae")
-	)
-	(wire
-		(pts
-			(xy 118.11 95.25) (xy 115.57 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96e307ac-a190-435c-a59e-a6266a1bec6e")
 	)
 	(wire
 		(pts
@@ -1383,7 +1223,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 95.25) (xy 118.11 95.25)
+			(xy 115.57 95.25) (xy 130.81 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1674,28 +1514,6 @@
 		(uuid "2373ccf1-1ae4-4ed9-9b57-bc0874e1ec77")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 127.5661 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "1640_DIN"
-		(shape input)
-		(at 137.16 129.54 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ef0e1465-42c2-4d07-ad3c-70c250b22d21")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 149.1561 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2306,76 +2124,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 137.16 121.92 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5d569523-7a36-406c-8eeb-fd68b2edccbe")
-		(property "Reference" "R2"
-			(at 139.7 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10K"
-			(at 139.7 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 138.938 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 137.16 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 137.16 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8cb8353d-2e79-495b-8642-3b8889fe3bf8")
-		)
-		(pin "1"
-			(uuid "8cd739d1-2042-437a-a32a-f1591d1310fb")
-		)
-		(instances
-			(project ""
-				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 92.71 129.54 0)
 		(unit 1)
@@ -2503,138 +2251,6 @@
 			(project ""
 				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 137.16 118.11 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6bcd681e-0d79-4c82-992c-3b3dc5c28cc2")
-		(property "Reference" "#PWR012"
-			(at 137.16 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 137.16 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 137.16 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 137.16 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "421ecb21-467d-4a20-826b-085923171cf8")
-		)
-		(instances
-			(project ""
-				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 118.11 109.22 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8fbf68a8-37f9-4b49-91d0-1fb0a4ce61aa")
-		(property "Reference" "#PWR08"
-			(at 118.11 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 118.11 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 118.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 118.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 118.11 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4346873d-7fbb-4216-be29-4022336ce281")
-		)
-		(instances
-			(project ""
-				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2837,76 +2453,6 @@
 			(project "ssdd"
 				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
 					(reference "SET")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 118.11 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd59d0e4-bca5-42d5-ad6a-de704f97bfe5")
-		(property "Reference" "R1"
-			(at 120.65 104.1399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10K"
-			(at 120.65 106.6799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 116.332 105.41 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 118.11 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 118.11 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "dd010a5f-c30f-43da-8a56-b982f42d4080")
-		)
-		(pin "2"
-			(uuid "916c810c-6208-47e8-91c0-f37ab4830177")
-		)
-		(instances
-			(project ""
-				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "R1")
 					(unit 1)
 				)
 			)
