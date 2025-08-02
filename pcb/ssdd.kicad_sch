@@ -1992,22 +1992,10 @@
 		)
 	)
 	(junction
-		(at 74.93 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "65f0f8ea-0190-4103-a9bf-fbe302de4179")
-	)
-	(junction
 		(at 128.27 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a2f9f02c-e2b3-4011-8d51-107d25fe82e0")
-	)
-	(junction
-		(at 74.93 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a343b98a-c9d2-46a4-b60e-c41c200a5368")
 	)
 	(junction
 		(at 130.81 77.47)
@@ -2033,26 +2021,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 43.18) (xy 74.93 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "519ea940-e806-4c37-970c-e06ae20ad44f")
-	)
-	(wire
-		(pts
-			(xy 74.93 35.56) (xy 78.74 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55730a82-086d-4ba8-9fa7-ba2373cfec5c")
-	)
-	(wire
-		(pts
 			(xy 52.07 171.45) (xy 62.23 171.45)
 		)
 		(stroke
@@ -2073,16 +2041,6 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 35.56) (xy 74.93 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "881388f5-1acf-46f8-a436-8c88c25ce46c")
-	)
-	(wire
-		(pts
 			(xy 115.57 80.01) (xy 129.54 80.01)
 		)
 		(stroke
@@ -2100,16 +2058,6 @@
 			(type default)
 		)
 		(uuid "a7a17767-c2ad-4ca3-9b95-8210451c9be0")
-	)
-	(wire
-		(pts
-			(xy 74.93 43.18) (xy 78.74 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae70f281-ec5b-4a0d-b0ca-d71001269ded")
 	)
 	(wire
 		(pts
@@ -2590,75 +2538,6 @@
 			(project "ssdd"
 				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
 					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 71.12 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0988df5b-c445-4498-a13f-38de2476a58a")
-		(property "Reference" "Cmcu2"
-			(at 61.214 37.846 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100uF"
-			(at 62.738 40.386 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.0852 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 71.12 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 71.12 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "08796c99-148f-44df-bb45-1d0e186b764f")
-		)
-		(pin "2"
-			(uuid "5ffc0a34-722e-4f26-a451-525abba4af72")
-		)
-		(instances
-			(project ""
-				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "Cmcu2")
 					(unit 1)
 				)
 			)
@@ -3741,7 +3620,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 78.74 39.37 0)
+		(at 74.93 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3749,8 +3628,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a40fcf5-61c9-44e9-b465-c48b5c59fe19")
-		(property "Reference" "Cmcu1"
-			(at 82.55 38.0999 0)
+		(property "Reference" "Cmcu"
+			(at 78.74 38.0999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3759,7 +3638,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 82.55 40.6399 0)
+			(at 78.74 40.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3768,7 +3647,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 79.7052 43.18 0)
+			(at 75.8952 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3777,7 +3656,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 39.37 0)
+			(at 74.93 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3786,7 +3665,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 78.74 39.37 0)
+			(at 74.93 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3803,7 +3682,7 @@
 		(instances
 			(project ""
 				(path "/be5c4baa-09c6-44d9-9a7a-613f890eb055"
-					(reference "Cmcu1")
+					(reference "Cmcu")
 					(unit 1)
 				)
 			)
