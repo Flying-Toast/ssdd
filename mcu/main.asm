@@ -145,7 +145,16 @@ end%:
 .endmacro
 
 .macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
-	; TODO
+	subi @1, 1
+	brcc done%
+	ldi @1, 9
+	subi @0, 1
+	brcc done%
+	ldi @0, @2
+.if @3 != 9
+	ldi @1, @3
+.endif
+done%:
 .endmacro
 
 ; hours are always set and stored using 24-hour time, only converted to 12-hour
