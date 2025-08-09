@@ -1,7 +1,9 @@
 .device attiny861a
 
-.def rhrs = r22
-.def rmins = r23
+.def rhrs_lo = r20
+.def rhrs_hi = r21
+.def rmins_lo = r22
+.def rmins_hi = r23
 .def rcause = r24
 .def rstate = r25
 .def xl = r26
@@ -124,13 +126,43 @@ tick_clock:
 
 	rjmp endtick
 
+.macro incdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+	inc @1
+	cpi @1, 10
+	brne clamp%
+	clr @1
+	inc @0
+clamp%:
+	cpi @0, @2
+	brlo end%
+	brne wrap%
+	cpi @1, @3+1
+	brne end%
+wrap%:
+	clr @0
+	clr @1
+end%:
+.endmacro
+
+.macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+	; TODO
+.endmacro
+
+; hours are always set and stored using 24-hour time, only converted to 12-hour
+; when rendering.
 tick_set_hrs:
 	sbrc rcause, causebit_set
 	ldi rstate, exp2(statebit_set_mins)
 
-	; TODO: handle cause = inc, increment BCD
+	bst rcause, causebit_inc
+	brtc __hrs_not_inc
+	incdig rhrs_hi, rhrs_lo, 2, 3
+__hrs_not_inc:
 
-	; TODO: handle cause = dec, increment BCD
+	bst rcause, causebit_dec
+	brtc __hrs_not_dec
+	decdig rhrs_hi, rhrs_lo, 2, 3
+__hrs_not_dec:
 
 	rjmp endtick
 
@@ -138,9 +170,15 @@ tick_set_mins:
 	sbrc rcause, causebit_set
 	ldi rstate, exp2(statebit_confirm_yes)
 
-	; TODO: handle cause = inc, increment BCD
+	bst rcause, causebit_inc
+	brtc __mins_not_inc
+	incdig rmins_hi, rmins_lo, 5, 9
+__mins_not_inc:
 
-	; TODO: handle cause = dec, increment BCD
+	bst rcause, causebit_dec
+	brtc __mins_not_dec
+	decdig rmins_hi, rmins_lo, 5, 9
+__mins_not_dec:
 
 	rjmp endtick
 
