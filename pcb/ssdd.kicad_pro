@@ -1080,7 +1080,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "art/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
