@@ -5140,7 +5140,7 @@
 				)
 			)
 		)
-		(property "Value" "100uF"
+		(property "Value" "10uF"
 			(at 249.174 80.772 90)
 			(effects
 				(font
@@ -5148,7 +5148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 252.73 76.5048 0)
 			(effects
 				(font
