@@ -35,8 +35,23 @@ rjmp reset
 .org 0x02
 rjmp pcint
 
+.macro clear_displaybuf
+	ldi xl, low(displaybuf)
+	ldi xh, high(displaybuf)
+	ldi yl, low(displaybuf_end)
+	ldi yh, high(displaybuf_end)
+	clr r16
+zero_at_x%:
+	st x+, r16
+	cp xl, yl
+	brne zero_at_x%
+	cp xh, yh
+	brne zero_at_x%
+.endmacro
+
 ; render the current state to displaybuf
 .macro render
+	clear_displaybuf
 	; TODO
 .endmacro
 
@@ -46,19 +61,6 @@ rjmp pcint
 .endmacro
 
 reset:
-	; zero zeroed_data_start..zeroed_data_end
-	ldi xl, low(zeroed_data_start)
-	ldi xh, high(zeroed_data_start)
-	ldi yl, low(zeroed_data_end)
-	ldi yh, high(zeroed_data_end)
-	clr r16
-zero_at_x:
-	st x+, r16
-	cp xl, yl
-	brne zero_at_x
-	cp xh, yh
-	brne zero_at_x
-
 	; initial state
 	ldi rstate, exp2(statebit_clock)
 	ldi rcause, exp2(causebit_update_time)
@@ -235,6 +237,5 @@ pcint:
 
 ;;;;; data ;;;;;
 .dseg
-zeroed_data_start:
 displaybuf: .byte 144
-zeroed_data_end:
+displaybuf_end:
