@@ -12,6 +12,7 @@
 .def yh = r29
 
 .equ ddrb = 0x17
+.equ porta = 0x1b
 .equ portb = 0x18
 .equ ddra = 0x1a
 .equ pcmsk1 = 0x22
@@ -89,9 +90,10 @@ reset:
 	ldi r16, 0b111 ; r16 (PCMSK1) = PCINT8|PCINT9|PCINT10
 	out pcmsk1, r16
 
-	; TODO: clear tm1640 ram by writing 0 to all tm1640 registers
-	; TODO: send "display on" commands to all tm1640S
 	; TODO have builtin timer interrupt after [60-cursecs] seconds with cause = update_time
+
+	; send "display on" command to each tm1640
+	; TODO
 tick:
 	sbrc rstate, statebit_clock
 	rjmp tick_clock
@@ -233,6 +235,61 @@ pcint:
 	;;;;;;;;;;;;;;;;;;;;;;;;;
 	; use ret instead of reti because we don't want to reenable interrupts
 	; until we tick to process this one.
+	ret
+
+; set a module's clock LOW
+; r31=module_num (0-indexed)
+clock_0:
+	cpi r31, 8
+	breq __0_m8
+	push r1
+	push r30
+	push r31
+	ldi r30, 1
+__0_loop:
+	cpi r31, 0
+	breq __0_shifted
+	dec r31
+	lsl r30
+	rjmp __0_loop
+__0_shifted:
+	in r1, porta
+	or r1, r30
+	out porta, r1
+	pop r31
+	pop r30
+	pop r1
+	ret
+__0_m8:
+	cbi portb, 3
+	ret
+
+; set a module's clock HIGH
+; r31=module_num (0-indexed)
+clock_1:
+	cpi r31, 8
+	breq __1_m8
+	push r1
+	push r30
+	push r31
+	ldi r30, 1
+__1_loop:
+	cpi r31, 0
+	breq __1_shifted
+	dec r31
+	lsl r30
+	rjmp __1_loop
+__1_shifted:
+	in r1, porta
+	com r30
+	and r1, r30
+	out porta, r1
+	pop r31
+	pop r30
+	pop r1
+	ret
+__1_m8:
+	sbi portb, 3
 	ret
 
 ;;;;; data ;;;;;
