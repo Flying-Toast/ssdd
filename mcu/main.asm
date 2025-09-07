@@ -56,9 +56,17 @@ zero_at_x%:
 	; TODO
 .endmacro
 
-; write out the display buffer to the TM1640s
+; write the display buffer to the displays
 .macro flushbuffer
 	; TODO
+.endmacro
+
+.macro dispdat_0
+	cbi portb, 6
+.endmacro
+
+.macro dispdat_1
+	sbi portb, 6
 .endmacro
 
 reset:
@@ -75,6 +83,7 @@ reset:
 	; pull-ups on buttons
 	ldi r16, 0b00000111
 	out portb, r16
+
 	; TODO NOTE NOTE NOTE: switch SDA between output low and input (hi-z) beacuse
 	; TODO NOTE NOTE NOTE: there is a pullup on it.
 
@@ -92,8 +101,19 @@ reset:
 
 	; TODO have builtin timer interrupt after [60-cursecs] seconds with cause = update_time
 
+	; TODO: set pulse width????
+
 	; send "display on" command to each tm1640
-	; TODO
+	ldi r30, 0b10001000
+	clr r31 ; module number (0-indexed)
+__displayon_loop:
+	rcall tm1640_start
+	rcall tm1640_outb
+	rcall tm1640_end
+	inc r31
+	cpi r31, 9
+	brne __displayon_loop
+
 tick:
 	sbrc rstate, statebit_clock
 	rjmp tick_clock
@@ -224,10 +244,6 @@ tick_confirm_no:
 
 	rjmp endtick
 
-gettime:
-	; TODO
-	ret
-
 pcint:
 	; no need to save registers in here because interrupts are only enabled
 	; during sleep in `endtick`.
@@ -235,6 +251,34 @@ pcint:
 	;;;;;;;;;;;;;;;;;;;;;;;;;
 	; use ret instead of reti because we don't want to reenable interrupts
 	; until we tick to process this one.
+	ret
+
+gettime:
+	; TODO
+	ret
+
+; do a start condition on a module.
+; r31=module_num (0-indexed)
+tm1640_start:
+	dispdat_1
+	rcall clock_1
+	dispdat_0
+	rcall clock_0
+	ret
+
+; do an end condition on a module.
+; r31=module_num (0-indexed)
+tm1640_end:
+	dispdat_0
+	rcall clock_1
+	dispdat_1
+	rcall clock_0
+	ret
+
+; write a byte to a module.
+; r30=byte, r31=module_num (0-indexed)
+tm1640_outb:
+	; TODO
 	ret
 
 ; set a module's clock LOW
