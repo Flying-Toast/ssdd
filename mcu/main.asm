@@ -278,7 +278,23 @@ tm1640_end:
 ; write a byte to a module.
 ; r30=byte, r31=module_num (0-indexed)
 tm1640_outb:
-	; TODO
+.macro onebit
+	dispdat_1
+	sbrs r30, 0
+	dispdat_0
+	rcall clock_1
+	rcall clock_0
+	; 8 `ror`s restores r30 to original value
+	ror r30
+.endmacro
+	onebit
+	onebit
+	onebit
+	onebit
+	onebit
+	onebit
+	onebit
+	onebit
 	ret
 
 ; set a module's clock LOW
