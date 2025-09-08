@@ -63,7 +63,7 @@ zero_at_x%:
 	sbi portb, 6
 .endmacro
 
-.macro incdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+.macro incdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo, @4=minlo
 	inc @1
 	cpi @1, 10
 	brne clamp%
@@ -77,11 +77,11 @@ clamp%:
 	brne end%
 wrap%:
 	clr @0
-	clr @1
+	ldi @1, @4
 end%:
 .endmacro
 
-.macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+.macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo, @4=minlo
 	subi @1, 1
 	brcc done%
 	ldi @1, 9
@@ -92,11 +92,23 @@ end%:
 	ldi @1, @3
 .endif
 done%:
+.if @4 != 0
+	cpi @0, 0
+	brne donemin%
+	cpi @1, @4
+	brsh donemin%
+	ldi @1, @4
+donemin%:
+.endif
 .endmacro
 
 ; store [rhrs|rmins]_[lo|hi] to the rtc
 .macro settime
+	; set 12 flag
+	ori rhrs_hi, (1<<6)
 	; TODO
+	; clear 12 flag and am/pm flag
+	andi rhrs_hi, 0b00011111
 .endmacro
 
 reset:
@@ -189,12 +201,12 @@ tick_set_hrs:
 
 	bst rcause, causebit_inc
 	brtc __hrs_not_inc
-	incdig rhrs_hi, rhrs_lo, 2, 3
+	incdig rhrs_hi, rhrs_lo, 1, 2, 1
 __hrs_not_inc:
 
 	bst rcause, causebit_dec
 	brtc __hrs_not_dec
-	decdig rhrs_hi, rhrs_lo, 2, 3
+	decdig rhrs_hi, rhrs_lo, 1, 2, 1
 __hrs_not_dec:
 
 	; TODO: render set_hrs
@@ -207,12 +219,12 @@ tick_set_mins:
 
 	bst rcause, causebit_inc
 	brtc __mins_not_inc
-	incdig rmins_hi, rmins_lo, 5, 9
+	incdig rmins_hi, rmins_lo, 5, 9, 0
 __mins_not_inc:
 
 	bst rcause, causebit_dec
 	brtc __mins_not_dec
-	decdig rmins_hi, rmins_lo, 5, 9
+	decdig rmins_hi, rmins_lo, 5, 9, 0
 __mins_not_dec:
 
 	; TODO: render set_mins
@@ -265,6 +277,8 @@ pcint:
 
 gettime:
 	; TODO
+	; clear 12 flag and am/pm flag
+	andi rhrs_hi, 0b00011111
 	ret
 
 ; do a start condition on a module.
