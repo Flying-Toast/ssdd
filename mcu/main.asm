@@ -50,12 +50,6 @@ zero_at_x%:
 	brne zero_at_x%
 .endmacro
 
-; render the current state to displaybuf
-.macro render
-	clear_displaybuf
-	; TODO
-.endmacro
-
 ; write the display buffer to the displays
 .macro flushbuffer
 	; TODO
@@ -151,6 +145,8 @@ __displayon_loop:
 	brne __displayon_loop
 
 tick:
+	clear_displaybuf
+
 	sbrc rstate, statebit_clock
 	rjmp tick_clock
 
@@ -168,7 +164,6 @@ tick:
 
 ; state processing functions return by jumping here
 endtick:
-	render
 	flushbuffer
 	; there won't be an interrupt between `sei` and `sleep` because AVR
 	; guarantes "The instruction following SEI will be executed before
@@ -184,10 +179,10 @@ tick_clock:
 	sbrc rcause, causebit_set
 	ldi rstate, exp2(statebit_set_hrs)
 
+	; TODO: render clock
+
 	rjmp endtick
 
-; hours are always set and stored using 24-hour time, only converted to 12-hour
-; when rendering.
 tick_set_hrs:
 	sbrc rcause, causebit_set
 	ldi rstate, exp2(statebit_set_mins)
@@ -201,6 +196,8 @@ __hrs_not_inc:
 	brtc __hrs_not_dec
 	decdig rhrs_hi, rhrs_lo, 2, 3
 __hrs_not_dec:
+
+	; TODO: render set_hrs
 
 	rjmp endtick
 
@@ -218,6 +215,8 @@ __mins_not_inc:
 	decdig rmins_hi, rmins_lo, 5, 9
 __mins_not_dec:
 
+	; TODO: render set_mins
+
 	rjmp endtick
 
 tick_confirm_yes:
@@ -234,6 +233,8 @@ __cause_isnt_set:
 	sbrc rcause, causebit_dec
 	ldi rstate, exp2(statebit_confirm_no)
 
+	; TODO: render confirm_yes
+
 	rjmp endtick
 
 tick_confirm_no:
@@ -248,6 +249,8 @@ __not_set:
 
 	sbrc rcause, causebit_dec
 	ldi rstate, exp2(statebit_confirm_yes)
+
+	; TODO: render confirm_no
 
 	rjmp endtick
 
