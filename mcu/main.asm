@@ -69,6 +69,42 @@ zero_at_x%:
 	sbi portb, 6
 .endmacro
 
+.macro incdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+	inc @1
+	cpi @1, 10
+	brne clamp%
+	clr @1
+	inc @0
+clamp%:
+	cpi @0, @2
+	brlo end%
+	brne wrap%
+	cpi @1, @3+1
+	brne end%
+wrap%:
+	clr @0
+	clr @1
+end%:
+.endmacro
+
+.macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
+	subi @1, 1
+	brcc done%
+	ldi @1, 9
+	subi @0, 1
+	brcc done%
+	ldi @0, @2
+.if @3 != 9
+	ldi @1, @3
+.endif
+done%:
+.endmacro
+
+; store [rhrs|rmins]_[lo|hi] to the rtc
+.macro settime
+	; TODO
+.endmacro
+
 reset:
 	; initial state
 	ldi rstate, exp2(statebit_clock)
@@ -150,37 +186,6 @@ tick_clock:
 
 	rjmp endtick
 
-.macro incdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
-	inc @1
-	cpi @1, 10
-	brne clamp%
-	clr @1
-	inc @0
-clamp%:
-	cpi @0, @2
-	brlo end%
-	brne wrap%
-	cpi @1, @3+1
-	brne end%
-wrap%:
-	clr @0
-	clr @1
-end%:
-.endmacro
-
-.macro decdig ; @0=hi, @1=lo, @2=maxhi, @3=maxlo
-	subi @1, 1
-	brcc done%
-	ldi @1, 9
-	subi @0, 1
-	brcc done%
-	ldi @0, @2
-.if @3 != 9
-	ldi @1, @3
-.endif
-done%:
-.endmacro
-
 ; hours are always set and stored using 24-hour time, only converted to 12-hour
 ; when rendering.
 tick_set_hrs:
@@ -218,9 +223,8 @@ __mins_not_dec:
 tick_confirm_yes:
 	bst rcause, causebit_set
 	brtc __cause_isnt_set
-	; TODO: store setting_hrs/mins back to RTC
+	settime
 	; back to clock mode
-	rcall gettime
 	ldi rstate, exp2(statebit_clock)
 __cause_isnt_set:
 
@@ -233,8 +237,11 @@ __cause_isnt_set:
 	rjmp endtick
 
 tick_confirm_no:
-	sbrc rcause, causebit_set
+	cpi rcause, exp2(causebit_set)
+	brne __not_set
+	rcall gettime
 	ldi rstate, exp2(statebit_clock)
+__not_set:
 
 	sbrc rcause, causebit_inc
 	ldi rstate, exp2(statebit_confirm_yes)
