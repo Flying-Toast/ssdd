@@ -176,6 +176,21 @@ tick:
 
 ; state processing functions return by jumping here
 endtick:
+	sbrc rstate, statebit_clock
+	rjmp render_clock
+
+	sbrc rstate, statebit_set_hrs
+	rjmp render_set_hrs
+
+	sbrc rstate, statebit_set_mins
+	rjmp render_set_mins
+
+	sbrc rstate, statebit_confirm_yes
+	rjmp render_confirm_yes
+
+	sbrc rstate, statebit_confirm_no
+	rjmp render_confirm_no
+end_render:
 	flushbuffer
 	; there won't be an interrupt between `sei` and `sleep` because AVR
 	; guarantes "The instruction following SEI will be executed before
@@ -190,8 +205,6 @@ tick_clock:
 
 	sbrc rcause, causebit_set
 	ldi rstate, exp2(statebit_set_hrs)
-
-	; TODO: render clock
 
 	rjmp endtick
 
@@ -209,8 +222,6 @@ __hrs_not_inc:
 	decdig rhrs_hi, rhrs_lo, 1, 2, 1
 __hrs_not_dec:
 
-	; TODO: render set_hrs
-
 	rjmp endtick
 
 tick_set_mins:
@@ -226,8 +237,6 @@ __mins_not_inc:
 	brtc __mins_not_dec
 	decdig rmins_hi, rmins_lo, 5, 9, 0
 __mins_not_dec:
-
-	; TODO: render set_mins
 
 	rjmp endtick
 
@@ -245,8 +254,6 @@ __cause_isnt_set:
 	sbrc rcause, causebit_dec
 	ldi rstate, exp2(statebit_confirm_no)
 
-	; TODO: render confirm_yes
-
 	rjmp endtick
 
 tick_confirm_no:
@@ -262,8 +269,6 @@ __not_set:
 	sbrc rcause, causebit_dec
 	ldi rstate, exp2(statebit_confirm_yes)
 
-	; TODO: render confirm_no
-
 	rjmp endtick
 
 pcint:
@@ -276,7 +281,8 @@ pcint:
 	ret
 
 gettime:
-	; TODO
+	; TODO: query rtc
+	;;;;;;;;;;;;;;;;;;;;;
 	; clear 12 flag and am/pm flag
 	andi rhrs_hi, 0b00011111
 	ret
@@ -375,6 +381,32 @@ __1_shifted:
 __1_m8:
 	sbi portb, 3
 	ret
+
+render_clock:
+	; TODO
+
+	rjmp end_render
+
+render_set_hrs:
+	; TODO
+
+	rjmp end_render
+
+render_set_mins:
+	; TODO
+
+	rjmp end_render
+
+
+render_confirm_yes:
+	; TODO
+
+	rjmp end_render
+
+render_confirm_no:
+	; TODO
+
+	rjmp end_render
 
 ;;;;; data ;;;;;
 .dseg
