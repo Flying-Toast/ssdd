@@ -1,4 +1,1 @@
-*.obj
-*.hex
-*.list
-*.map
+*.elf

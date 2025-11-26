@@ -1,10 +1,10 @@
 .POSIX:
 
-main.hex: main.asm
-	avra -l main.list -m main.map main.asm
+main.elf: main.c
+	avr-gcc -Wall -Wextra -mmcu=attiny861 -o main.elf -O3 main.c
 
-flash: main.hex
-	avrdude -p t861 -c usbasp -U flash:w:main.hex:i
+flash: main.elf
+	avrdude -p t861 -c usbasp -U flash:w:main.elf:e
 
 clean:
-	rm -f *.hex *.obj *.list *.map
+	rm -f *.elf
