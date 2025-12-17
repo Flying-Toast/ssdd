@@ -1,4 +1,3 @@
-*.obj
-*.hex
-*.list
-*.map
+*.elf
+font.h
+bakefont
