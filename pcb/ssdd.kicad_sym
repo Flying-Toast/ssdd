@@ -106,7 +106,7 @@
 					)
 				)
 			)
-			(text "F"
+			(text "G"
 				(at -1.016 2.032 0)
 				(effects
 					(font
@@ -122,7 +122,7 @@
 					)
 				)
 			)
-			(text "G"
+			(text "F"
 				(at 0.254 1.016 0)
 				(effects
 					(font
