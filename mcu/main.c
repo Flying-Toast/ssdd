@@ -35,6 +35,7 @@ static const uint8_t digits[] = {
 	0x5F, 0x06, 0x3B, 0x2F, 0x66,
 	0x6D, 0x7D, 0x07, 0x7F, 0x6F,
 };
+static _Bool clock_needs_render;
 
 static void tm1640_dat1(void) {
 	PORTB |= 1 << PB6;
@@ -250,11 +251,21 @@ static void rtc_gettime(void) {
 	uint8_t reg2 = rtc_rx(NACK);
 	rtc_stop();
 
-	minutes[0] = reg1 >> 4;
-	minutes[1] = reg1 & 0xF;
+	uint8_t mins0 = reg1 >> 4;
+	uint8_t mins1 = reg1 & 0xF;
 	/* clear AM/PM and 12 hour flag */
-	hours[0] = (reg2 >> 4) & 1;
-	hours[1] = reg2 & 0xF;
+	uint8_t hrs0 = (reg2 >> 4) & 1;
+	uint8_t hrs1 = reg2 & 0xF;
+
+	clock_needs_render = mins0 != minutes[0]
+		|| mins1 != minutes[1]
+		|| hrs0 != hours[0]
+		|| hrs1 != hours[1];
+
+	minutes[0] = mins0;
+	minutes[1] = mins1;
+	hours[0] = hrs0;
+	hours[1] = hrs1;
 }
 
 static void rtc_settime(void) {
@@ -311,6 +322,7 @@ static void handle_set_pressed(void) {
 		rtc_settime();
 		rtc_gettime();
 		mode = MODE_CLOCK;
+		clock_needs_render = 1;
 		break;
 	}
 }
@@ -503,8 +515,10 @@ int main(void) {
 	tm1640_all_on();
 
 	for (;;) {
-		render();
-		show();
+		if (mode != MODE_CLOCK || clock_needs_render) {
+			render();
+			show();
+		}
 		clear_displaybuf();
 
 		/* This guarantees we'll see exactly one interrupt per iteration of
