@@ -38,13 +38,13 @@ struct bm {
 
 /* Positions of each segment within the bounding box of a single display. */
 static const struct {
-	/* X coordinate of top left corner. Within [0, SEGMENT_MAX_X). */
+	/* X coordinate of top left corner. Within [0, SEGMENT_MAX_X]. */
 	unsigned tl_x;
-	/* Y coordinate of top left corner. Within [0, SEGMENT_MAX_Y). */
+	/* Y coordinate of top left corner. Within [0, SEGMENT_MAX_Y]. */
 	unsigned tl_y;
-	/* Within [0, SEGMENT_MAX_X). */
+	/* Within [0, SEGMENT_MAX_X]. */
 	unsigned width;
-	/* Within [0, SEGMENT_MAX_Y). */
+	/* Within [0, SEGMENT_MAX_Y]. */
 	unsigned height;
 } segpos[] = {
 	/* A */ { 50, 26, 48, 20 },
