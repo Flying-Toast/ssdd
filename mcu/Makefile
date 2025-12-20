@@ -1,6 +1,4 @@
-.POSIX:
-
-FONT = /usr/share/fonts/jetbrains-mono/JetBrainsMonoNL-BoldItalic.ttf
+FONT = /usr/share/fonts/jetbrains-mono/JetBrainsMonoNL-ExtraBoldItalic.ttf
 
 main.elf: main.c font.h
 	avr-gcc -Wall -Wextra -mmcu=attiny861 -o main.elf -O3 main.c
