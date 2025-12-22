@@ -401,7 +401,7 @@ static void big_char(uint8_t chidx, uint8_t dx) {
 static void render_clock(void) {
 	if (hours[0])
 		big_char(hours[0], 0);
-	big_char(hours[1], 1 * CHAR_DISPLAYS_X);
+	big_char(hours[1], CHAR_DISPLAYS_X);
 
 	/* colon */
 	displaybuf[60] = 0x63;
@@ -431,7 +431,8 @@ static void render_setting_time(void) {
 
 	/* underline the part being set */
 	if (mode == MODE_SET_HRS) {
-		displaybuf[84] = 1;
+		if (setting_hours >= 10)
+			displaybuf[84] = 1;
 		displaybuf[85] = 1;
 	} else if (mode == MODE_SET_MINS_TENS) {
 		displaybuf[86] = 1;
