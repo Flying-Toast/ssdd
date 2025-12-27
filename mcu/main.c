@@ -151,7 +151,7 @@ static void show(void) {
 static void tm1640_all_on(void) {
 	for (uint8_t module = 1;;) {
 		tm1640_start(module);
-		tm1640_tx(module, 0x88); /* display on */
+		tm1640_tx(module, 0x8B); /* display on */
 		tm1640_stop(module);
 
 		if (module == 0)
