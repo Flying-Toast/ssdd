@@ -441,6 +441,16 @@ static void render_setting_time(void) {
 	}
 }
 
+static void testpattern(void) {
+	for (uint8_t i = 0; i < sizeof(displaybuf); i++) {
+		for (uint8_t b = 1; b; b <<= 1) {
+			displaybuf[i] |= b;
+			show();
+		}
+	}
+	clear_displaybuf();
+}
+
 /* Draw pixels to displaybuf to be shown on the screen. */
 static void render(void) {
 	switch (mode) {
@@ -516,6 +526,9 @@ int main(void) {
 
 	show();
 	tm1640_all_on();
+
+	if ((PINB & (1 << PB0)) == 0)
+		testpattern();
 
 	for (;;) {
 		if (mode != MODE_CLOCK || clock_needs_render) {
