@@ -478,11 +478,13 @@ ISR(PCINT_vect) {
 	/* wait for bouncing to stabilize */
 	_delay_ms(10);
 
-	if ((PINB & (1 << PB0)) == 0) {
+	uint8_t pinb = PINB;
+
+	if ((pinb & (1 << PB0)) == 0) {
 		interrupt = INTR_SET_PRESSED;
-	} else if ((PINB & (1 << PB1)) == 0) {
+	} else if ((pinb & (1 << PB1)) == 0) {
 		interrupt = INTR_INC_PRESSED;
-	} else if ((PINB & (1 << PB2)) == 0) {
+	} else if ((pinb & (1 << PB2)) == 0) {
 		interrupt = INTR_DEC_PRESSED;
 	} else {
 		interrupt = INTR_IGNORE;
