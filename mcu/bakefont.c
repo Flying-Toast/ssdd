@@ -151,10 +151,7 @@ static void bake_char(FT_Face face, const struct metrics *maxm, char ch) {
 	if ((e = FT_Load_Char(face, ch, FT_LOAD_RENDER | FT_LOAD_TARGET_MONO)))
 		errx(1, "FT_Load_Char: %s", ft_errstr(e));
 	FT_GlyphSlot g = face->glyph;
-	if (g->bitmap.pitch < 0) {
-		g->bitmap.pitch *= -1;
-		g->bitmap.buffer -= g->bitmap.pitch * g->bitmap.rows;
-	}
+	assert(g->bitmap.pitch > 0);
 	long bearx = g->metrics.horiBearingX >> 6;
 	long beary = g->metrics.horiBearingY >> 6;
 
